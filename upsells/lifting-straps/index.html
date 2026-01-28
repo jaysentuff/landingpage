@@ -120,6 +120,93 @@
             color: #666;
         }
 
+        /* Reviews Section */
+        .reviews-section {
+            margin-top: 30px;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .reviews-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .reviews-header .stars {
+            color: #fbbf24;
+            font-size: 20px;
+        }
+
+        .review-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .reviewer-info {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .verified-badge {
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 14px;
+        }
+
+        .review-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
         /* Pricing */
         .pricing {
             display: flex;
@@ -441,6 +528,61 @@
 
         <div class="no-thanks">
             <a href="#" onclick="declineOffer()">No thanks, I don't want to save on lifting straps</a>
+        </div>
+
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <h3>What Customers Are Saying</h3>
+                <span class="stars">★★★★★</span> <span style="color: #9ca3af; font-size: 14px;">81 Reviews</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">DM</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Derek M. <span class="verified-badge">Verified Buyer</span></div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-title">Lifting Straps</div>
+                <div class="review-text">Great quality, fast shipping, love the brand.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">HN</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Hieu N. <span class="verified-badge">Verified Buyer</span></div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-title">Best Strap For Extra Grip</div>
+                <div class="review-text">Super strong straps for lifting heavy or back day workout.</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">AG</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Amanda G. <span class="verified-badge">Verified Buyer</span></div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-title">Great Straps</div>
+                <div class="review-text">My trainer saw these & commented, "Wow! Those are THICK. So nice!" I've never used straps before, but my hands have been bothering me when I lift. I absolutely love them!</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">RG</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Ruben G. <span class="verified-badge">Verified Buyer</span></div>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="review-title">Tough</div>
+                <div class="review-text">The straps are high quality. Very tough.</div>
+            </div>
         </div>
     </div>
 
