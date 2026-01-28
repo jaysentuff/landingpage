@@ -2780,13 +2780,13 @@
 
             // Update text
             if (qty === 1) {
-                subtitle.textContent = 'Select your color';
+                subtitle.innerHTML = 'Select your color';
                 savingsText.innerHTML = 'Free shipping included';
             } else if (qty === 2) {
-                subtitle.textContent = 'Select your pack';
+                subtitle.innerHTML = 'Select your pack <span style="font-size:10px;color:#999;font-weight:normal;display:block;margin-top:2px;">tap to preview colors in gallery</span>';
                 savingsText.innerHTML = "you're saving 17%";
             } else {
-                subtitle.textContent = 'Select your pack';
+                subtitle.innerHTML = 'Select your pack <span style="font-size:10px;color:#999;font-weight:normal;display:block;margin-top:2px;">tap to preview colors in gallery</span>';
                 savingsText.innerHTML = "you're saving 33%";
             }
 
