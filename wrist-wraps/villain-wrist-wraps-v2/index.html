@@ -2634,14 +2634,67 @@
             });
         }
 
-        // Color data with hex values
+        // Color data with hex values and images
         const colors = {
-            blackout: { label: 'Blackout', hex: '#1a1a1a' },
-            merica: { label: 'Merica', hex: 'linear-gradient(135deg, #dc2626 33%, #fff 33%, #fff 66%, #1e40af 66%)' },
-            'pink-teal': { label: 'Pink/Teal', hex: 'linear-gradient(135deg, #ec4899 50%, #14b8a6 50%)' },
-            'black-white': { label: 'Black & White', hex: 'linear-gradient(135deg, #1a1a1a 50%, #ffffff 50%)' },
-            'black-camo': { label: 'Black Camo', hex: 'linear-gradient(135deg, #1a1a1a 25%, #374151 25%, #374151 50%, #1a1a1a 50%, #1a1a1a 75%, #4b5563 75%)' },
-            'arctic-camo': { label: 'Arctic Camo', hex: 'linear-gradient(135deg, #e5e7eb 25%, #9ca3af 25%, #9ca3af 50%, #f3f4f6 50%, #f3f4f6 75%, #d1d5db 75%)' }
+            blackout: {
+                label: 'Blackout',
+                hex: '#1a1a1a',
+                images: [
+                    'assets/images/blackout/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.webp',
+                    'assets/images/blackout/16-villain-wrist-wraps-blackout-tuffwraps-1144089635.webp',
+                    'assets/images/blackout/16-villain-wrist-wraps-blackout-tuffwraps-1144089636.webp',
+                    'assets/images/blackout/16-villain-wrist-wraps-blackout-tuffwraps-1145647092.webp'
+                ]
+            },
+            merica: {
+                label: 'Merica',
+                hex: 'linear-gradient(135deg, #dc2626 33%, #fff 33%, #fff 66%, #1e40af 66%)',
+                images: [
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546326.webp',
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546327.webp',
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546328.webp',
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546329.webp'
+                ]
+            },
+            'pink-teal': {
+                label: 'Pink/Teal',
+                hex: 'linear-gradient(135deg, #ec4899 50%, #14b8a6 50%)',
+                images: [
+                    'assets/images/pink-teal/16-villain-wrist-wraps-pink-teal-16-inch-tuffwraps-1152118719.webp',
+                    'assets/images/pink-teal/16-villain-sidekick-wrist-wraps-pink-teal-tuffwraps-30200114282584.webp',
+                    'assets/images/pink-teal/16-villain-sidekick-wrist-wraps-pink-teal-tuffwraps-30200114315352.webp'
+                ]
+            },
+            'black-white': {
+                label: 'Black & White',
+                hex: 'linear-gradient(135deg, #1a1a1a 50%, #ffffff 50%)',
+                images: [
+                    'assets/images/black-white/16-villain-wrist-wraps-black-white-16-inch-tuffwraps-1152118716.webp',
+                    'assets/images/black-white/16-villain-wrist-wraps-black-white-tuffwraps-1145647102.webp',
+                    'assets/images/black-white/16-villain-wrist-wraps-black-white-tuffwraps-1145647103.webp',
+                    'assets/images/black-white/16-villain-wrist-wraps-black-white-tuffwraps-1145647104.webp'
+                ]
+            },
+            'black-camo': {
+                label: 'Black Camo',
+                hex: 'linear-gradient(135deg, #1a1a1a 25%, #374151 25%, #374151 50%, #1a1a1a 50%, #1a1a1a 75%, #4b5563 75%)',
+                images: [
+                    'assets/images/black-camo/16-villain-wrist-wraps-black-camo-16-inch-tuffwraps-1152118754.webp',
+                    'assets/images/black-camo/16-villain-wrist-wraps-black-camo-tuffwraps-1145647099.webp',
+                    'assets/images/black-camo/16-villain-wrist-wraps-black-camo-tuffwraps-1145647100.webp',
+                    'assets/images/black-camo/16-villain-wrist-wraps-black-camo-tuffwraps-1145647101.webp'
+                ]
+            },
+            'arctic-camo': {
+                label: 'Arctic Camo',
+                hex: 'linear-gradient(135deg, #e5e7eb 25%, #9ca3af 25%, #9ca3af 50%, #f3f4f6 50%, #f3f4f6 75%, #d1d5db 75%)',
+                images: [
+                    'assets/images/artic-camo/16-villain-wrist-wraps-arctic-camo-16-inch-tuffwraps-1152118736.webp',
+                    'assets/images/artic-camo/16-villain-wrist-wraps-arctic-camo-tuffwraps-1145647096.webp',
+                    'assets/images/artic-camo/16-villain-wrist-wraps-arctic-camo-tuffwraps-1145647097.webp',
+                    'assets/images/artic-camo/16-villain-wrist-wraps-arctic-camo-tuffwraps-1145647098.webp'
+                ]
+            }
         };
 
         // Preset packs for each quantity
@@ -2668,9 +2721,45 @@
             ]
         };
 
-        // Track selected preset
+        // Track selected preset and current gallery images
         let selectedPreset = 0;
         let selectedColors = ['blackout'];
+        let currentGalleryImages = [];
+        let currentImageIndex = 0;
+
+        // Update the gallery with images from selected colors (1 per color)
+        function updateGallery() {
+            // Get unique colors from selection
+            const uniqueColors = [...new Set(selectedColors)];
+
+            // Get first image from each unique color
+            currentGalleryImages = [];
+            uniqueColors.forEach(colorKey => {
+                if (colors[colorKey] && colors[colorKey].images && colors[colorKey].images[0]) {
+                    currentGalleryImages.push(colors[colorKey].images[0]);
+                }
+            });
+
+            // Update main image
+            currentImageIndex = 0;
+            const mainImage = document.getElementById('mainImage');
+            if (mainImage && currentGalleryImages.length > 0) {
+                mainImage.src = currentGalleryImages[0];
+            }
+
+            // Update thumbnails
+            const thumbnailStrip = document.querySelector('.thumbnail-strip');
+            if (thumbnailStrip) {
+                thumbnailStrip.innerHTML = '';
+                currentGalleryImages.forEach((img, index) => {
+                    const thumb = document.createElement('div');
+                    thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
+                    thumb.onclick = () => selectThumbnail(index);
+                    thumb.innerHTML = `<img src="${img}" alt="Thumbnail ${index + 1}" />`;
+                    thumbnailStrip.appendChild(thumb);
+                });
+            }
+        }
 
         // Select a preset
         function selectPreset(index) {
@@ -2682,6 +2771,9 @@
             document.querySelectorAll('.preset-option').forEach((opt, i) => {
                 opt.classList.toggle('selected', i === index);
             });
+
+            // Update gallery
+            updateGallery();
         }
 
         // Generate preset options based on quantity
@@ -2705,6 +2797,7 @@
             // Reset selection
             selectedPreset = 0;
             selectedColors = [...presets[qty][0].colors];
+            updateGallery();
 
             // Render preset options
             container.innerHTML = '';
