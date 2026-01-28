@@ -1,2 +1,2 @@
 [start]
-cmd = "npx serve -s . -l $PORT"
+cmd = "npx serve . -l $PORT"
