@@ -259,26 +259,26 @@
             text-decoration: underline;
         }
 
-        /* Timer */
-        .timer-section {
-            background: #fef3c7;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: center;
+        /* Timer - Top Position */
+        .timer-section-top {
+            margin-top: 15px;
         }
 
-        .timer-section p {
-            font-size: 14px;
-            color: #92400e;
-            margin-bottom: 8px;
+        .timer-section-top p {
+            font-size: 16px;
+            color: #fbbf24;
+            font-weight: 600;
         }
 
-        .timer {
-            font-size: 28px;
+        .timer-section-top .timer {
+            font-size: 24px;
             font-weight: 800;
             color: #dc2626;
             font-variant-numeric: tabular-nums;
+            background: #fef3c7;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-left: 8px;
         }
 
         /* Trust Badges */
@@ -335,6 +335,9 @@
         <div class="wait-message">
             <h1>WAIT! Your Order Is Not Complete</h1>
             <p>Add this to your order with one click - no need to re-enter payment info</p>
+            <div class="timer-section-top">
+                <p>This offer expires in: <span class="timer" id="timer">10:00</span></p>
+            </div>
         </div>
 
         <div class="product-card">
@@ -371,10 +374,10 @@
                     </div>
                 </div>
 
-                <div class="timer-section">
-                    <p>This special price expires in:</p>
-                    <div class="timer" id="timer">10:00</div>
-                </div>
+                <button class="cta-button" onclick="acceptOffer()">
+                    Yes! Add Lifting Straps To My Order
+                    <span class="price">Just $9.99 (You Save $4.01)</span>
+                </button>
 
                 <ul class="benefits">
                     <li>
@@ -394,11 +397,6 @@
                         <span><strong>8 Colors Available</strong> - Match your wrist wraps or mix it up</span>
                     </li>
                 </ul>
-
-                <button class="cta-button" onclick="acceptOffer()">
-                    Yes! Add Lifting Straps To My Order
-                    <span class="price">Just $9.99 (You Save $4.01)</span>
-                </button>
 
                 <div class="trust-badges">
                     <div class="trust-badge">
