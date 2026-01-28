@@ -867,6 +867,111 @@
             margin-top: 12px;
         }
 
+        /* Social Proof Video Section */
+        .social-proof-section {
+            padding: 60px 20px;
+            background: #f8f8f8;
+        }
+
+        .social-proof-section h2 {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .social-proof-section .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .social-video-slider {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0 20px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+        }
+
+        .social-video-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .social-video-slider:active {
+            cursor: grabbing;
+        }
+
+        .social-video-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 9 / 16;
+            position: relative;
+        }
+
+        .social-video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-video-card .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .social-video-card .play-overlay:hover {
+            background: rgba(0,0,0,0.4);
+        }
+
+        .social-video-card .play-overlay.hidden {
+            display: none;
+        }
+
+        .social-video-card .play-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-video-card .play-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #000;
+            margin-left: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .social-proof-section {
+                padding: 40px 15px;
+            }
+
+            .social-video-card {
+                flex: 0 0 200px;
+            }
+        }
+
         /* Mobile Video Slider */
         @media (max-width: 768px) {
             .video-grid {
@@ -2373,6 +2478,97 @@
         </div>
     </section>
 
+    <!-- Social Proof Video Section -->
+    <section class="social-proof-section">
+        <div class="container">
+            <h2>Real Lifters. Real Results.</h2>
+            <p class="subtitle">See what people are saying about TuffWraps</p>
+
+            <div class="social-video-slider" id="socialVideoSlider">
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/review-benquilpierre.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/tutorial-alexdavies.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/realtalk-chrispantano.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/unboxing-cookiekingjoe.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/unboxing-strengthcartel.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/workout-blessingawodibu.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/athlete-thaiswerner.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/review-sierraswan.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/review-blkcamo.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="social-video-card">
+                    <video playsinline muted loop preload="metadata">
+                        <source src="assets/videos/social/wriststraps-usethem.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay" onclick="playVideo(this)">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reviews Section -->
     <section class="reviews-section-new">
         <div class="container">
@@ -2937,6 +3133,72 @@
             }
             initDragScroll();
         });
+
+        // Social video play/pause
+        function playVideo(overlay) {
+            const card = overlay.parentElement;
+            const video = card.querySelector('video');
+
+            // Pause all other videos
+            document.querySelectorAll('.social-video-card video').forEach(v => {
+                if (v !== video) {
+                    v.pause();
+                    v.parentElement.querySelector('.play-overlay').classList.remove('hidden');
+                }
+            });
+
+            if (video.paused) {
+                video.play();
+                overlay.classList.add('hidden');
+            } else {
+                video.pause();
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        // Pause video when clicking on it while playing
+        document.querySelectorAll('.social-video-card video').forEach(video => {
+            video.addEventListener('click', function() {
+                const overlay = this.parentElement.querySelector('.play-overlay');
+                this.pause();
+                overlay.classList.remove('hidden');
+            });
+        });
+
+        // Drag to scroll for social video slider
+        (function() {
+            const slider = document.getElementById('socialVideoSlider');
+            if (!slider) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        })();
 
         // Add to Cart
         function addToCart() {
