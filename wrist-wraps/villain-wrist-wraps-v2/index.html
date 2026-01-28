@@ -2638,10 +2638,10 @@
         const colors = {
             blackout: { label: 'Blackout', hex: '#1a1a1a' },
             merica: { label: 'Merica', hex: 'linear-gradient(135deg, #dc2626 33%, #fff 33%, #fff 66%, #1e40af 66%)' },
-            'black-green': { label: 'Black/Green', hex: 'linear-gradient(135deg, #1a1a1a 50%, #22c55e 50%)' },
-            pink: { label: 'Pink', hex: '#ec4899' },
-            purple: { label: 'Purple', hex: '#8b5cf6' },
-            red: { label: 'Red', hex: '#dc2626' }
+            'pink-teal': { label: 'Pink/Teal', hex: 'linear-gradient(135deg, #ec4899 50%, #14b8a6 50%)' },
+            'black-white': { label: 'Black & White', hex: 'linear-gradient(135deg, #1a1a1a 50%, #ffffff 50%)' },
+            'black-camo': { label: 'Black Camo', hex: 'linear-gradient(135deg, #1a1a1a 25%, #374151 25%, #374151 50%, #1a1a1a 50%, #1a1a1a 75%, #4b5563 75%)' },
+            'arctic-camo': { label: 'Arctic Camo', hex: 'linear-gradient(135deg, #e5e7eb 25%, #9ca3af 25%, #9ca3af 50%, #f3f4f6 50%, #f3f4f6 75%, #d1d5db 75%)' }
         };
 
         // Preset packs for each quantity
@@ -2649,22 +2649,22 @@
             1: [
                 { name: 'Blackout', colors: ['blackout'] },
                 { name: 'Merica', colors: ['merica'] },
-                { name: 'Black/Green', colors: ['black-green'] },
-                { name: 'Pink', colors: ['pink'] },
-                { name: 'Purple', colors: ['purple'] },
-                { name: 'Red', colors: ['red'] }
+                { name: 'Pink/Teal', colors: ['pink-teal'] },
+                { name: 'Black & White', colors: ['black-white'] },
+                { name: 'Black Camo', colors: ['black-camo'] },
+                { name: 'Arctic Camo', colors: ['arctic-camo'] }
             ],
             2: [
                 { name: 'Both Blackout', colors: ['blackout', 'blackout'] },
                 { name: 'Blackout + Merica', colors: ['blackout', 'merica'] },
-                { name: 'Blackout + Black/Green', colors: ['blackout', 'black-green'] },
-                { name: 'Both Pink', colors: ['pink', 'pink'] }
+                { name: 'Blackout + Pink/Teal', colors: ['blackout', 'pink-teal'] },
+                { name: 'Camo Combo', colors: ['black-camo', 'arctic-camo'] }
             ],
             3: [
                 { name: 'All Blackout', colors: ['blackout', 'blackout', 'blackout'] },
-                { name: 'Variety Pack', colors: ['blackout', 'merica', 'black-green'] },
-                { name: 'USA Pack', colors: ['blackout', 'merica', 'red'] },
-                { name: 'All Pink', colors: ['pink', 'pink', 'pink'] }
+                { name: 'Variety Pack', colors: ['blackout', 'merica', 'pink-teal'] },
+                { name: 'Camo Pack', colors: ['blackout', 'black-camo', 'arctic-camo'] },
+                { name: 'USA Pack', colors: ['blackout', 'merica', 'black-white'] }
             ]
         };
 
