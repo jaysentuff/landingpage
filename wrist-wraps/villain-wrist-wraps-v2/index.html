@@ -206,6 +206,23 @@
             padding: 5px;
             height: 80px;
             min-height: 80px;
+            max-width: 100%;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .thumbnail-strip::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .thumbnail-strip::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .thumbnail-strip::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
         }
 
         .thumbnail {
@@ -217,6 +234,7 @@
             border: 2px solid transparent;
             flex-shrink: 0;
             transition: all 0.2s;
+            scroll-snap-align: start;
         }
 
         .thumbnail:hover,
