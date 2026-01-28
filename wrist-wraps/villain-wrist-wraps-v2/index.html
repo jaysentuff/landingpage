@@ -374,7 +374,7 @@
             background: #f8f8f8;
             border: 1px solid #e5e5e5;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             margin-bottom: 20px;
         }
 
@@ -382,7 +382,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .color-section-title {
@@ -396,171 +396,78 @@
             color: #666;
         }
 
-        /* Popular Combos */
-        .combo-picks {
+        /* Preset Options - Clean & Simple */
+        .preset-options {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 8px;
-            margin-bottom: 16px;
         }
 
-        .combo-pick {
-            padding: 8px 14px;
-            background: white;
-            border: 2px solid #e5e5e5;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
+        .preset-option {
             display: flex;
             align-items: center;
-            gap: 6px;
+            padding: 12px 14px;
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .combo-pick:hover {
+        .preset-option:hover {
             border-color: #999;
         }
 
-        .combo-pick.selected {
+        .preset-option.selected {
             border-color: #1a1a1a;
-            background: #1a1a1a;
-            color: white;
+            background: #fafafa;
         }
 
-        .combo-pick .combo-dots {
+        .preset-dots {
             display: flex;
-            gap: 2px;
+            gap: 4px;
+            margin-right: 12px;
         }
 
-        .combo-pick .combo-dot {
-            width: 10px;
-            height: 10px;
+        .preset-dot {
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            border: 1px solid rgba(0,0,0,0.2);
+            border: 1px solid rgba(0,0,0,0.15);
         }
 
-        /* Color Swatches */
-        .color-swatches-section {
-            border-top: 1px solid #e5e5e5;
-            padding-top: 16px;
-        }
-
-        .swatches-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .color-swatches {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .color-swatch {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-            border: 3px solid transparent;
-        }
-
-        .color-swatch:hover {
-            transform: scale(1.1);
-        }
-
-        .color-swatch.selected {
-            border-color: #1a1a1a;
-        }
-
-        .color-swatch::after {
-            content: attr(data-label);
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 9px;
-            color: #666;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .color-swatch:hover::after,
-        .color-swatch.selected::after {
-            opacity: 1;
-        }
-
-        /* Pair Selection with Swatches */
-        .pair-color-selectors {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .pair-selector {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .pair-label {
-            font-size: 13px;
+        .preset-name {
+            font-size: 14px;
             font-weight: 600;
-            color: #333;
-            min-width: 50px;
+            color: #1a1a1a;
+            flex: 1;
         }
 
-        .pair-swatches {
+        .preset-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #e5e5e5;
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .pair-swatch {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 2px solid transparent;
-            position: relative;
-        }
-
-        .pair-swatch:hover {
-            transform: scale(1.1);
-        }
-
-        .pair-swatch.selected {
-            border-color: #1a1a1a;
-            box-shadow: 0 0 0 2px white, 0 0 0 4px #1a1a1a;
-        }
-
-        .pair-swatch .checkmark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 14px;
-            height: 14px;
-            background: white;
-            border-radius: 50%;
-            display: none;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
         }
 
-        .pair-swatch.selected .checkmark {
-            display: flex;
+        .preset-option.selected .preset-check {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
         }
 
-        .pair-swatch .checkmark svg {
-            width: 10px;
-            height: 10px;
+        .preset-check svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+            opacity: 0;
+        }
+
+        .preset-option.selected .preset-check svg {
+            opacity: 1;
         }
 
         .color-selectors {
@@ -2229,24 +2136,14 @@
                     </div>
                 </div>
 
-                <!-- Color Selection Section -->
+                <!-- Color Selection Section - Simple Presets -->
                 <div class="color-selection-section" id="colorSection">
                     <div class="color-section-header">
-                        <span class="color-section-title">Choose Your Colors</span>
-                        <span class="color-section-subtitle" id="colorSubtitle">Select a color for each pair</span>
+                        <span class="color-section-title">Choose Your Pack</span>
+                        <span class="color-section-subtitle" id="colorSubtitle">Select your colors</span>
                     </div>
-
-                    <!-- Popular Combos - Quick Picks -->
-                    <div class="combo-picks" id="comboPicks">
+                    <div class="preset-options" id="presetOptions">
                         <!-- Dynamically populated based on quantity -->
-                    </div>
-
-                    <!-- Individual Pair Selection with Swatches -->
-                    <div class="color-swatches-section">
-                        <span class="swatches-label">Or customize each pair:</span>
-                        <div class="pair-color-selectors" id="pairSelectors">
-                            <!-- Dynamically populated based on quantity -->
-                        </div>
                     </div>
                 </div>
 
@@ -2737,224 +2634,110 @@
             });
         }
 
-        // Color options with hex colors and images
-        const colorOptions = [
-            {
-                value: 'blackout',
-                label: 'Blackout',
-                hex: '#1a1a1a',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041',
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089636.png?v=1743072103',
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089635.png?v=1743071432'
-                ]
-            },
-            {
-                value: 'black-green',
-                label: 'Black/Green',
-                hex: 'linear-gradient(135deg, #1a1a1a 50%, #22c55e 50%)',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-black-green-tuffwraps-1138585173.png?v=1759242331'
-                ]
-            },
-            {
-                value: 'merica',
-                label: 'Merica',
-                hex: 'linear-gradient(135deg, #dc2626 33%, #ffffff 33%, #ffffff 66%, #1e40af 66%)',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1145647092.png?v=1744114402'
-                ]
-            },
-            {
-                value: 'pink',
-                label: 'Pink',
-                hex: '#ec4899',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041'
-                ]
-            },
-            {
-                value: 'purple',
-                label: 'Purple',
-                hex: '#8b5cf6',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041'
-                ]
-            },
-            {
-                value: 'red',
-                label: 'Red',
-                hex: '#dc2626',
-                images: [
-                    'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041'
-                ]
-            }
-        ];
+        // Color data with hex values
+        const colors = {
+            blackout: { label: 'Blackout', hex: '#1a1a1a' },
+            merica: { label: 'Merica', hex: 'linear-gradient(135deg, #dc2626 33%, #fff 33%, #fff 66%, #1e40af 66%)' },
+            'black-green': { label: 'Black/Green', hex: 'linear-gradient(135deg, #1a1a1a 50%, #22c55e 50%)' },
+            pink: { label: 'Pink', hex: '#ec4899' },
+            purple: { label: 'Purple', hex: '#8b5cf6' },
+            red: { label: 'Red', hex: '#dc2626' }
+        };
 
-        // Popular combos for different quantities
-        const popularCombos = {
+        // Preset packs for each quantity
+        const presets = {
             1: [
                 { name: 'Blackout', colors: ['blackout'] },
                 { name: 'Merica', colors: ['merica'] },
-                { name: 'Black/Green', colors: ['black-green'] }
+                { name: 'Black/Green', colors: ['black-green'] },
+                { name: 'Pink', colors: ['pink'] },
+                { name: 'Purple', colors: ['purple'] },
+                { name: 'Red', colors: ['red'] }
             ],
             2: [
-                { name: 'All Blackout', colors: ['blackout', 'blackout'] },
+                { name: 'Both Blackout', colors: ['blackout', 'blackout'] },
                 { name: 'Blackout + Merica', colors: ['blackout', 'merica'] },
-                { name: 'Mix Pack', colors: ['blackout', 'black-green'] }
+                { name: 'Blackout + Black/Green', colors: ['blackout', 'black-green'] },
+                { name: 'Both Pink', colors: ['pink', 'pink'] }
             ],
             3: [
                 { name: 'All Blackout', colors: ['blackout', 'blackout', 'blackout'] },
                 { name: 'Variety Pack', colors: ['blackout', 'merica', 'black-green'] },
-                { name: 'Blackout + 2 Colors', colors: ['blackout', 'merica', 'pink'] }
+                { name: 'USA Pack', colors: ['blackout', 'merica', 'red'] },
+                { name: 'All Pink', colors: ['pink', 'pink', 'pink'] }
             ]
         };
 
-        // Track selected colors for each pair
+        // Track selected preset
+        let selectedPreset = 0;
         let selectedColors = ['blackout'];
 
-        // Update gallery to show selected color's images
-        function updateGalleryForColor(colorValue) {
-            const color = colorOptions.find(c => c.value === colorValue);
-            if (color && color.images && color.images.length > 0) {
-                const mainImage = document.getElementById('mainImage');
-                if (mainImage) {
-                    mainImage.src = color.images[0];
-                }
-                // Update thumbnails if this color has multiple images
-                const thumbnails = document.querySelectorAll('.thumbnail img');
-                color.images.forEach((img, index) => {
-                    if (thumbnails[index]) {
-                        thumbnails[index].src = img;
-                    }
-                });
-            }
-        }
-
-        // Select a combo
-        function selectCombo(comboIndex) {
+        // Select a preset
+        function selectPreset(index) {
             const qty = parseInt(document.querySelector('.quantity-option.selected').dataset.qty);
-            const combo = popularCombos[qty][comboIndex];
-            selectedColors = [...combo.colors];
+            selectedPreset = index;
+            selectedColors = [...presets[qty][index].colors];
 
-            // Update combo buttons
-            document.querySelectorAll('.combo-pick').forEach((btn, i) => {
-                btn.classList.toggle('selected', i === comboIndex);
-            });
-
-            // Update pair swatches
-            updatePairSwatchSelection();
-
-            // Update gallery
-            updateGalleryForColor(selectedColors[0]);
-        }
-
-        // Select color for a specific pair
-        function selectPairColor(pairIndex, colorValue) {
-            selectedColors[pairIndex] = colorValue;
-
-            // Clear combo selection
-            document.querySelectorAll('.combo-pick').forEach(btn => btn.classList.remove('selected'));
-
-            // Update pair swatches
-            updatePairSwatchSelection();
-
-            // Update gallery to show this color
-            updateGalleryForColor(colorValue);
-        }
-
-        // Update the visual selection state of pair swatches
-        function updatePairSwatchSelection() {
-            document.querySelectorAll('.pair-selector').forEach((selector, pairIndex) => {
-                const swatches = selector.querySelectorAll('.pair-swatch');
-                swatches.forEach(swatch => {
-                    swatch.classList.toggle('selected', swatch.dataset.color === selectedColors[pairIndex]);
-                });
+            // Update UI
+            document.querySelectorAll('.preset-option').forEach((opt, i) => {
+                opt.classList.toggle('selected', i === index);
             });
         }
 
-        // Generate color selectors based on quantity
+        // Generate preset options based on quantity
         function updateColorSelectors(qty) {
-            const comboContainer = document.getElementById('comboPicks');
-            const pairContainer = document.getElementById('pairSelectors');
+            const container = document.getElementById('presetOptions');
             const subtitle = document.getElementById('colorSubtitle');
             const savingsText = document.getElementById('savingsText');
 
-            // Update subtitle and savings text
+            // Update text
             if (qty === 1) {
                 subtitle.textContent = 'Select your color';
                 savingsText.innerHTML = 'Free shipping included';
             } else if (qty === 2) {
-                subtitle.textContent = 'Quick picks or customize below';
+                subtitle.textContent = 'Select your pack';
                 savingsText.innerHTML = "you're saving 17%";
             } else {
-                subtitle.textContent = 'Quick picks or customize below';
+                subtitle.textContent = 'Select your pack';
                 savingsText.innerHTML = "you're saving 33%";
             }
 
-            // Initialize selected colors array
-            selectedColors = Array(qty).fill('blackout');
+            // Reset selection
+            selectedPreset = 0;
+            selectedColors = [...presets[qty][0].colors];
 
-            // Render combo picks
-            comboContainer.innerHTML = '';
-            popularCombos[qty].forEach((combo, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'combo-pick' + (index === 0 ? ' selected' : '');
-                btn.onclick = () => selectCombo(index);
+            // Render preset options
+            container.innerHTML = '';
+            presets[qty].forEach((preset, index) => {
+                const option = document.createElement('div');
+                option.className = 'preset-option' + (index === 0 ? ' selected' : '');
+                option.onclick = () => selectPreset(index);
 
-                // Create color dots
-                const dots = document.createElement('span');
-                dots.className = 'combo-dots';
-                combo.colors.forEach(colorVal => {
-                    const color = colorOptions.find(c => c.value === colorVal);
-                    const dot = document.createElement('span');
-                    dot.className = 'combo-dot';
-                    dot.style.background = color.hex;
+                // Color dots
+                const dots = document.createElement('div');
+                dots.className = 'preset-dots';
+                preset.colors.forEach(colorKey => {
+                    const dot = document.createElement('div');
+                    dot.className = 'preset-dot';
+                    dot.style.background = colors[colorKey].hex;
                     dots.appendChild(dot);
                 });
 
-                btn.appendChild(dots);
-                btn.appendChild(document.createTextNode(combo.name));
-                comboContainer.appendChild(btn);
+                // Name
+                const name = document.createElement('span');
+                name.className = 'preset-name';
+                name.textContent = preset.name;
+
+                // Checkmark
+                const check = document.createElement('div');
+                check.className = 'preset-check';
+                check.innerHTML = '<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>';
+
+                option.appendChild(dots);
+                option.appendChild(name);
+                option.appendChild(check);
+                container.appendChild(option);
             });
-
-            // Render pair selectors with swatches
-            pairContainer.innerHTML = '';
-            for (let i = 0; i < qty; i++) {
-                const selector = document.createElement('div');
-                selector.className = 'pair-selector';
-
-                const label = document.createElement('span');
-                label.className = 'pair-label';
-                label.textContent = qty === 1 ? 'Color:' : `Pair ${i + 1}:`;
-
-                const swatches = document.createElement('div');
-                swatches.className = 'pair-swatches';
-
-                colorOptions.forEach(color => {
-                    const swatch = document.createElement('div');
-                    swatch.className = 'pair-swatch' + (color.value === 'blackout' ? ' selected' : '');
-                    swatch.style.background = color.hex;
-                    swatch.dataset.color = color.value;
-                    swatch.title = color.label;
-                    swatch.onclick = () => selectPairColor(i, color.value);
-
-                    // Add checkmark
-                    const checkmark = document.createElement('span');
-                    checkmark.className = 'checkmark';
-                    checkmark.innerHTML = '<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>';
-                    swatch.appendChild(checkmark);
-
-                    swatches.appendChild(swatch);
-                });
-
-                selector.appendChild(label);
-                selector.appendChild(swatches);
-                pairContainer.appendChild(selector);
-            }
-
-            // Select first combo by default
-            selectCombo(0);
         }
 
         // Quantity Selection
@@ -2967,7 +2750,7 @@
             updateColorSelectors(qty);
         }
 
-        // Initialize color selectors on page load
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             const selected = document.querySelector('.quantity-option.selected');
             if (selected) {
@@ -2981,13 +2764,10 @@
             const qty = parseInt(selected.dataset.qty);
             const price = selected.dataset.price;
 
-            // Get selected colors
-            const colorLabels = selectedColors.map(val => {
-                const color = colorOptions.find(c => c.value === val);
-                return color ? color.label : val;
-            });
+            // Get color labels
+            const colorLabels = selectedColors.map(key => colors[key].label);
 
-            // Show confirmation (in real implementation, this would add to Shopify cart)
+            // Show confirmation
             alert(`Added ${qty} pair(s) of Villain Wrist Wraps to cart!\n\nColors: ${colorLabels.join(', ')}\nTotal: $${price}\n\nRedirecting to checkout...`);
 
             // In production, redirect to Shopify checkout:
