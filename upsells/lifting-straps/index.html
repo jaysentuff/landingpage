@@ -329,7 +329,7 @@
 
         <div class="product-card">
             <img
-                src="https://www.tuffwraps.com/cdn/shop/products/61cOVJnTJrL._AC_SL1500.jpg?v=1658334477"
+                src="assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-all-black-tuffwraps-1152130640.jpg"
                 alt="TUFF Padded Lifting Straps"
                 class="product-image"
                 id="productImage"
@@ -411,6 +411,18 @@
     </div>
 
     <script>
+        // Color to image mapping
+        const colorImages = {
+            'All Black': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-all-black-tuffwraps-1152130640.jpg',
+            'Gray': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-gray-tuffwraps-1152130639.jpg',
+            'Teal/Pink': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-teal-pink-tuffwraps-1152130642.jpg',
+            'Sandstone': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-sandstone-tuffwraps-1152130641.jpg',
+            'Military Green': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-military-green-tuffwraps-1204175170.jpg',
+            'Red': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-red-tuffwraps-1204175171.jpg',
+            'Navy': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-navy-tuffwraps-1204175174.jpg',
+            'Pink': 'assets/tuff-lifting-straps-premium-padded-lifting-straps-with-neoprene-pink-tuffwraps-1204175172.jpg'
+        };
+
         // Color selection
         let selectedColor = 'All Black';
 
@@ -419,6 +431,12 @@
             element.classList.add('selected');
             selectedColor = element.dataset.color;
             document.getElementById('colorName').textContent = selectedColor;
+
+            // Update product image
+            const newImage = colorImages[selectedColor];
+            if (newImage) {
+                document.getElementById('productImage').src = newImage;
+            }
         }
 
         // Countdown timer
