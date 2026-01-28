@@ -1540,7 +1540,7 @@
             .hero-container {
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 8px;
             }
 
             .product-gallery {
@@ -1582,31 +1582,32 @@
                 margin-left: -15px;
                 margin-right: -15px;
                 background: white;
-                padding: 10px 15px 5px;
+                padding: 8px 15px 0;
             }
 
             .main-image-container {
-                padding: 15px 20px;
-                border-radius: 12px;
+                padding: 8px 12px;
+                border-radius: 10px;
                 background: #f0f0f0;
             }
 
             .main-image-container img {
                 width: 100%;
-                height: auto;
+                max-height: 180px;
+                object-fit: contain;
             }
 
             /* Show thumbnails on mobile */
             .thumbnail-strip {
                 display: flex;
-                padding: 8px 0 0 0;
-                gap: 6px;
+                padding: 6px 0 0 0;
+                gap: 5px;
                 overflow-x: auto;
             }
 
             .thumbnail {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
                 flex-shrink: 0;
             }
 
