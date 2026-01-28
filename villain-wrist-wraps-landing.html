@@ -1564,7 +1564,9 @@
             .purchase-options .rating-line .rating-text {
                 font-size: 11px;
             }
-            .purchase-options .save-headline { order: 2; text-align: center; }
+            .purchase-options .save-headline { order: 2; text-align: center; margin-bottom: 5px; }
+            .purchase-options .save-headline .save-main { font-size: 32px; font-weight: 900; }
+            .purchase-options .save-headline .save-sub { font-size: 18px; font-weight: 600; }
             .purchase-options .hero-title { display: none; }
             .purchase-options .urgency-box { order: 3; padding: 10px 14px; margin-bottom: 10px; }
             .purchase-options .urgency-box p { font-size: 13px; }
@@ -1704,11 +1706,16 @@
             }
 
             .value-prop-benefits {
-                gap: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                padding: 15px 20px;
             }
 
             .vp-benefit {
-                font-size: 13px;
+                font-size: 14px;
+                width: 100%;
             }
 
             /* Video Section */
@@ -1717,7 +1724,8 @@
             }
 
             .video-section h2 {
-                font-size: 20px;
+                font-size: 26px;
+                font-weight: 800;
                 margin-bottom: 25px;
             }
 
@@ -1727,11 +1735,12 @@
             }
 
             .how-it-works h2 {
-                font-size: 26px;
+                font-size: 28px;
+                font-weight: 800;
             }
 
             .how-it-works .subtitle {
-                font-size: 15px;
+                font-size: 16px;
             }
 
             .step-image {
@@ -1745,7 +1754,8 @@
             }
 
             .step-card h3 {
-                font-size: 18px;
+                font-size: 20px;
+                font-weight: 700;
             }
 
             .step-card p {
@@ -1758,7 +1768,8 @@
             }
 
             .solution-text h2 {
-                font-size: 24px;
+                font-size: 28px;
+                font-weight: 800;
             }
 
             .solution-text p {
@@ -1771,7 +1782,8 @@
             }
 
             .section-title {
-                font-size: 24px !important;
+                font-size: 26px !important;
+                font-weight: 800 !important;
             }
 
             .feature-item {
@@ -1784,7 +1796,7 @@
             }
 
             .feature-item h3 {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             /* Reviews Section */
@@ -1793,7 +1805,8 @@
             }
 
             .reviews-section-new h2 {
-                font-size: 24px;
+                font-size: 28px;
+                font-weight: 800;
                 margin-bottom: 30px;
             }
 
@@ -1951,7 +1964,7 @@
                     <button class="gallery-nav prev" onclick="changeImage(-1)">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
                     </button>
-                    <img id="mainImage" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="16 Inch Villain Wrist Wraps - Blackout" />
+                    <img id="mainImage" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="16 Inch Villain Wrist Wraps - Blackout" onclick="openImageLightbox()" style="cursor: zoom-in;" />
                     <button class="gallery-nav next" onclick="changeImage(1)">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
                     </button>
