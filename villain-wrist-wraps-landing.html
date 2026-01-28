@@ -1554,22 +1554,33 @@
                 flex-direction: column;
             }
 
-            /* Reorder purchase options elements on mobile */
+            /* Reorder purchase options - Add to Cart FIRST */
             .purchase-options .rating-line { order: 1; }
             .purchase-options .save-headline { order: 2; }
-            .purchase-options .hero-title { order: 3; }
-            .purchase-options .urgency-box { order: 4; }
-            .purchase-options .add-to-cart-btn { order: 5; margin-bottom: 15px; }
-            .purchase-options .quantity-options { order: 6; }
-            .purchase-options .color-selection-section { order: 7; }
+            .purchase-options .hero-title { order: 3; font-size: 20px !important; margin-bottom: 12px; }
+            .purchase-options .add-to-cart-btn { order: 4; margin-bottom: 20px; }
+            .purchase-options .quantity-options { order: 5; }
+            .purchase-options .color-selection-section { order: 6; }
+            .purchase-options .urgency-box { order: 7; }
             .purchase-options .subscribe-line { order: 8; }
             .purchase-options .size-guide-link { order: 9; }
             .purchase-options .benefits-title { order: 10; }
             .purchase-options .benefits-list { order: 11; }
 
+            /* Smaller product image on mobile */
             .main-image-container {
-                padding: 15px;
+                padding: 10px;
                 border-radius: 12px;
+            }
+
+            .main-image-container img {
+                max-height: 250px;
+                object-fit: contain;
+            }
+
+            /* Hide thumbnails on mobile to save space */
+            .thumbnail-strip {
+                display: none;
             }
 
             .gallery-badges {
