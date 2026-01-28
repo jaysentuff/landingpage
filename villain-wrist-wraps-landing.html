@@ -1575,22 +1575,20 @@
             .purchase-options .benefits-title { order: 9; }
             .purchase-options .benefits-list { order: 10; }
 
-            /* Product image on mobile - FULL WIDTH */
+            /* Product image on mobile - centered and constrained */
+            .product-gallery {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
             .main-image-container {
-                padding: 15px;
+                padding: 20px;
                 border-radius: 12px;
             }
 
             .main-image-container img {
                 width: 100%;
                 height: auto;
-                max-height: none;
-                object-fit: contain;
-            }
-
-            .main-image-container img {
-                max-height: 250px;
-                object-fit: contain;
             }
 
             /* Hide thumbnails on mobile to save space */
