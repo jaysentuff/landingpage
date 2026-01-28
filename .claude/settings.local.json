@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:tuffwraps.com)",
+      "WebFetch(domain:tryledisa.com)",
+      "WebFetch(domain:www.tuffwraps.com)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node test-mobile.js:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e:*)",
+      "Bash(git reset:*)",
+      "Bash(git mv:*)"
+    ]
+  }
+}
