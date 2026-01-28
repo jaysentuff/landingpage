@@ -1554,7 +1554,7 @@
                 flex-direction: column;
             }
 
-            /* Reorder purchase options - Add to Cart FIRST */
+            /* Reorder purchase options to match reference */
             .purchase-options .rating-line {
                 order: 1;
                 justify-content: center;
@@ -1566,27 +1566,25 @@
             }
             .purchase-options .save-headline { order: 2; text-align: center; }
             .purchase-options .hero-title { display: none; }
-            .purchase-options .add-to-cart-btn { order: 4; margin-bottom: 20px; }
-            .purchase-options .quantity-options { order: 5; }
-            .purchase-options .color-selection-section { order: 6; }
-            .purchase-options .urgency-box { order: 7; }
-            .purchase-options .subscribe-line { order: 8; text-align: center; }
-            .purchase-options .size-guide-link { order: 9; }
-            .purchase-options .benefits-title { order: 10; }
-            .purchase-options .benefits-list { order: 11; }
+            .purchase-options .urgency-box { order: 3; }
+            .purchase-options .quantity-options { order: 4; }
+            .purchase-options .subscribe-line { order: 5; text-align: center; }
+            .purchase-options .add-to-cart-btn { order: 6; margin-bottom: 20px; }
+            .purchase-options .color-selection-section { order: 7; }
+            .purchase-options .size-guide-link { order: 8; }
+            .purchase-options .benefits-title { order: 9; }
+            .purchase-options .benefits-list { order: 10; }
 
-            /* Smaller product image on mobile - CENTERED */
+            /* Product image on mobile - FULL WIDTH */
             .main-image-container {
-                padding: 10px;
+                padding: 15px;
                 border-radius: 12px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
 
             .main-image-container img {
-                max-height: 220px;
-                width: auto;
+                width: 100%;
+                height: auto;
+                max-height: none;
                 object-fit: contain;
             }
 
