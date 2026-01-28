@@ -1555,22 +1555,39 @@
             }
 
             /* Reorder purchase options - Add to Cart FIRST */
-            .purchase-options .rating-line { order: 1; }
-            .purchase-options .save-headline { order: 2; }
+            .purchase-options .rating-line {
+                order: 1;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+            .purchase-options .rating-line .rating-text {
+                font-size: 11px;
+            }
+            .purchase-options .save-headline { order: 2; text-align: center; }
             .purchase-options .hero-title { display: none; }
             .purchase-options .add-to-cart-btn { order: 4; margin-bottom: 20px; }
             .purchase-options .quantity-options { order: 5; }
             .purchase-options .color-selection-section { order: 6; }
             .purchase-options .urgency-box { order: 7; }
-            .purchase-options .subscribe-line { order: 8; }
+            .purchase-options .subscribe-line { order: 8; text-align: center; }
             .purchase-options .size-guide-link { order: 9; }
             .purchase-options .benefits-title { order: 10; }
             .purchase-options .benefits-list { order: 11; }
 
-            /* Smaller product image on mobile */
+            /* Smaller product image on mobile - CENTERED */
             .main-image-container {
                 padding: 10px;
                 border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main-image-container img {
+                max-height: 220px;
+                width: auto;
+                object-fit: contain;
             }
 
             .main-image-container img {
