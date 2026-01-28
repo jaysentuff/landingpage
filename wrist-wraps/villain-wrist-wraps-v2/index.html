@@ -890,41 +890,29 @@
         .social-video-slider {
             display: flex;
             gap: 15px;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            padding: 10px 20px 20px 20px;
-            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            padding: 10px 0 20px 0;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            cursor: grab;
-            touch-action: pan-x;
-            margin: 0 -20px;
         }
 
         .social-video-slider::-webkit-scrollbar {
             display: none;
         }
 
-        .social-video-slider:active {
-            cursor: grabbing;
-        }
-
         .social-video-card {
-            flex: 0 0 280px;
+            position: relative;
+            width: 280px;
+            min-width: 280px;
             flex-shrink: 0;
-            scroll-snap-align: start;
             border-radius: 12px;
             overflow: hidden;
             background: #000;
-            aspect-ratio: 9 / 16;
-            position: relative;
         }
 
         .social-video-card video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
 
         .social-video-card .play-overlay {
@@ -983,8 +971,8 @@
             }
 
             .social-video-card {
-                flex: 0 0 180px;
-                flex-shrink: 0;
+                width: 200px;
+                min-width: 200px;
             }
         }
 
