@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16" Villain Wrist Wraps | TuffWraps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Urgency Banner - Black Style */
+        .urgency-banner {
+            background: #1a1a1a;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .urgency-banner .promo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .urgency-banner .promo-main {
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .urgency-banner .promo-sub {
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .countdown-box {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 12px;
+            gap: 4px;
+            color: #1a1a1a;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 32px;
+        }
+
+        .countdown-unit .number {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .countdown-unit .label {
+            font-size: 9px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .countdown-separator {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1;
+            margin: 0 2px;
+        }
+
+        /* Hero Section - Two Column Layout */
+        .hero {
+            background: #fff;
+            padding: 40px 20px 60px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Left Column - Product Gallery */
+        .product-gallery {
+            position: sticky;
+            top: 80px;
+        }
+
+        .main-image-container {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .main-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .gallery-nav:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .gallery-nav.prev { left: 15px; }
+        .gallery-nav.next { right: 15px; }
+
+        .gallery-badges {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .gallery-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            background: rgba(255,255,255,0.95);
+            padding: 8px 14px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+
+        .thumbnail-strip {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #1a1a1a;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Right Column - Purchase Options */
+        .purchase-options {
+            padding: 10px 0;
+        }
+
+        .rating-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #f5a623;
+            font-size: 18px;
+            letter-spacing: -1px;
+        }
+
+        .rating-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .save-headline {
+            margin-bottom: 10px;
+        }
+
+        .save-main {
+            display: block;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+
+        .save-sub {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: #666;
+        }
+
+        .urgency-box {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.3);
+        }
+
+        .urgency-box .icon {
+            font-size: 22px;
+            color: white;
+        }
+
+        .urgency-box .icon svg {
+            stroke: white;
+        }
+
+        .urgency-box p {
+            font-size: 16px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .urgency-box strong {
+            font-weight: 700;
+            color: white;
+            font-size: 17px;
+        }
+
+        /* Quantity Options */
+        .quantity-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-option {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .quantity-option:hover {
+            border-color: #1a1a1a;
+        }
+
+        .quantity-option.selected {
+            border-color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .quantity-option .save-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #dc2626;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .quantity-option .product-img {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            display: block;
+        }
+
+        .quantity-option .option-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .quantity-option .option-price {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Color Selection Section */
+        .color-selection-section {
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .color-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .color-section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .color-section-subtitle {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .color-selectors {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .color-selector-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .color-selector-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            min-width: 60px;
+        }
+
+        .color-selector-row select {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            background: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+        }
+
+        .color-selector-row select:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+
+        @media (max-width: 480px) {
+            .color-section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .color-selector-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+            }
+
+            .color-selector-label {
+                min-width: auto;
+            }
+        }
+
+        /* Subscribe Option */
+        .subscribe-line {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-line strong {
+            color: #dc2626;
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart-btn {
+            width: 100%;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .add-to-cart-btn .arrow {
+            font-size: 20px;
+        }
+
+        /* Benefits List */
+        .benefits-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #444;
+            padding: 6px 0;
+        }
+
+        .benefits-list li svg {
+            color: #1a1a1a;
+            flex-shrink: 0;
+        }
+
+        /* Value Proposition Section */
+        .value-prop-section {
+            padding: 60px 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .value-prop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .value-prop-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .value-prop-problem,
+        .value-prop-solution {
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .value-prop-problem {
+            background: #2a2a2a;
+            border: 2px solid #dc2626;
+        }
+
+        .value-prop-solution {
+            background: #2a2a2a;
+            border: 1px solid #444;
+        }
+
+        .vp-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .value-prop-problem h2,
+        .value-prop-solution h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .value-prop-problem p,
+        .value-prop-solution p {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .value-prop-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .vp-benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .vp-benefit svg {
+            color: #dc2626;
+        }
+
+        /* Reviews Section - New Style */
+        .reviews-section-new {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .reviews-section-new h2 {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+
+        .reviews-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card-new {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .reviewer-avatar-placeholder {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .reviewer-details h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #dc2626;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .verified-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .review-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .review-stars {
+            color: #f5a623;
+            font-size: 16px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            color: #444;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .how-it-works .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Video Section - 3 Videos Inline */
+        .video-section {
+            padding: 20px 20px 60px;
+            background: #1a1a1a;
+            margin-top: -1px;
+        }
+
+        .video-section h2 {
+            text-align: center;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .video-card .video-title {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Mobile Video Slider */
+        @media (max-width: 768px) {
+            .video-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 15px;
+                padding: 0 20px;
+                margin: 0 -20px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .video-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .video-card {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+            }
+
+            .video-slider-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .video-slider-dots .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #444;
+                transition: background 0.2s;
+            }
+
+            .video-slider-dots .dot.active {
+                background: #dc2626;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .video-slider-dots {
+                display: none;
+            }
+        }
+
+        /* Size Guide Link */
+        .size-guide-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .size-guide-link:hover {
+            background: #e5e5e5;
+        }
+
+        .size-guide-link svg {
+            color: #dc2626;
+        }
+
+        .size-guide-link span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-modal-content {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+
+        .video-modal video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .step-card {
+            text-align: center;
+        }
+
+        .step-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #1a1a1a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Legacy CTA button for other sections */
+        .cta-button {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #a1a1a1;
+        }
+
+        .hero-feature svg {
+            color: #dc2626;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #dc2626;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .problem-card .icon {
+            width: 50px;
+            height: 50px;
+            background: #e5e5e5;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-card .icon svg {
+            color: #dc2626;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .solution-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .solution-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .solution-text h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .solution-text h2 span {
+            color: #dc2626;
+        }
+
+        .solution-text p {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .solution-benefits {
+            list-style: none;
+        }
+
+        .solution-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .solution-benefits li svg {
+            color: #dc2626;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background: #0f0f0f;
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-item .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: #a1a1a1;
+            font-size: 15px;
+        }
+
+        /* Product Selection Section */
+        .product-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .color-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .color-option {
+            padding: 12px 25px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .color-option:hover,
+        .color-option.active {
+            border-color: #dc2626;
+            background: #f5f5f5;
+        }
+
+        .color-option.active {
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #f8f8f8;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            border-color: #dc2626;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.popular {
+            border-color: #dc2626;
+            background: white;
+        }
+
+        .pricing-card.popular::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #dc2626;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .quantity {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 900;
+            color: #dc2626;
+            margin-bottom: 5px;
+        }
+
+        .pricing-card .price span {
+            font-size: 20px;
+            color: #999;
+        }
+
+        .pricing-card .per-unit {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card .savings {
+            background: #e5e5e5;
+            color: #dc2626;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card ul li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-card ul li svg {
+            color: #dc2626;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-card .stars {
+            color: #fbbf24;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .avatar {
+            width: 45px;
+            height: 45px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info span {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* FAQ Section - Two Column Layout */
+        .faq-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .faq-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .faq-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .faq-header h2 {
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .faq-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #ccc;
+            padding: 20px 0;
+        }
+
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .faq-question .plus {
+            font-size: 24px;
+            font-weight: 300;
+            color: #999;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question .plus {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding-top: 15px;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 60px 20px;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .guarantee-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .guarantee-section p {
+            color: #a1a1a1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .cta-button {
+            background: white;
+            color: #dc2626;
+        }
+
+        .final-cta .cta-button:hover {
+            background: #f8f8f8;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: #888;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* ========== MOBILE RESPONSIVE STYLES ========== */
+        @media (max-width: 768px) {
+            /* Urgency Banner - Full Width */
+            .urgency-banner {
+                padding: 10px 15px;
+                gap: 10px;
+                width: 100%;
+                margin: 0;
+            }
+
+            .urgency-banner .promo-main {
+                font-size: 13px;
+            }
+
+            .urgency-banner .promo-sub {
+                font-size: 11px;
+            }
+
+            .countdown-unit .number {
+                font-size: 18px;
+            }
+
+            .countdown-separator {
+                font-size: 18px;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 0 15px 40px;
+            }
+
+            .hero-container {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .product-gallery {
+                position: static !important;
+                order: 1;
+            }
+
+            .purchase-options {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Reorder purchase options to match reference */
+            .purchase-options .rating-line {
+                order: 1;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+            .purchase-options .rating-line .rating-text {
+                font-size: 11px;
+            }
+            .purchase-options .save-headline { order: 2; text-align: center; margin-bottom: 5px; }
+            .purchase-options .save-headline .save-main { font-size: 32px; font-weight: 900; }
+            .purchase-options .save-headline .save-sub { font-size: 18px; font-weight: 600; }
+            .purchase-options .hero-title { display: none; }
+            .purchase-options .urgency-box { order: 3; padding: 12px 16px; margin-bottom: 18px; }
+            .purchase-options .urgency-box p { font-size: 13px; }
+            .purchase-options .quantity-options { order: 4; }
+            .purchase-options .subscribe-line { order: 5; text-align: center; }
+            .purchase-options .add-to-cart-btn { order: 6; margin-bottom: 20px; }
+            .purchase-options .color-selection-section { order: 7; }
+            .purchase-options .size-guide-link { order: 8; }
+            .purchase-options .benefits-title { order: 9; }
+            .purchase-options .benefits-list { order: 10; }
+
+            /* Product image on mobile - full width with white border effect */
+            .product-gallery {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+                margin-right: -15px;
+                background: white;
+                padding: 8px 15px 0;
+            }
+
+            .main-image-container {
+                padding: 8px 12px;
+                border-radius: 10px;
+                background: #f0f0f0;
+            }
+
+            .main-image-container img {
+                width: 100%;
+                max-height: 180px;
+                object-fit: contain;
+            }
+
+            /* Show thumbnails on mobile */
+            .thumbnail-strip {
+                display: flex;
+                padding: 6px 0 0 0;
+                gap: 5px;
+                overflow-x: auto;
+            }
+
+            .thumbnail {
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+
+            .gallery-badges {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .gallery-badge {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+
+            .gallery-nav {
+                width: 35px;
+                height: 35px;
+            }
+
+            .gallery-nav.prev { left: 10px; }
+            .gallery-nav.next { right: 10px; }
+
+            .thumbnail {
+                width: 55px;
+                height: 55px;
+            }
+
+            /* Purchase Options */
+            .save-main {
+                font-size: 22px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            /* Keep quantity options in 3 columns like reference */
+            .quantity-options {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .quantity-option {
+                display: block;
+                text-align: center;
+                padding: 12px 8px;
+            }
+
+            .quantity-option .product-img {
+                width: 40px;
+                height: 40px;
+                margin: 0 auto 8px;
+            }
+
+            .quantity-option .option-title {
+                font-size: 12px;
+                margin-bottom: 2px;
+            }
+
+            .quantity-option .option-price {
+                font-size: 11px;
+            }
+
+            .quantity-option .save-badge {
+                top: -8px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                font-size: 8px;
+                padding: 3px 6px;
+            }
+
+            .add-to-cart-btn {
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+
+            /* Value Prop Section */
+            .value-prop-section {
+                padding: 40px 15px;
+            }
+
+            .value-prop-problem,
+            .value-prop-solution {
+                padding: 20px;
+            }
+
+            .value-prop-problem h2,
+            .value-prop-solution h2 {
+                font-size: 20px;
+            }
+
+            .value-prop-benefits {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            .vp-benefit {
+                font-size: 14px;
+                width: 100%;
+            }
+
+            /* Video Section */
+            .video-section {
+                padding: 15px 15px 40px;
+            }
+
+            .video-section h2 {
+                font-size: 26px;
+                font-weight: 800;
+                margin-bottom: 25px;
+            }
+
+            /* How It Works */
+            .how-it-works {
+                padding: 50px 15px;
+            }
+
+            .how-it-works h2 {
+                font-size: 28px;
+                font-weight: 800;
+            }
+
+            .how-it-works .subtitle {
+                font-size: 16px;
+            }
+
+            .step-image {
+                height: 200px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .step-card h3 {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .step-card p {
+                font-size: 14px;
+            }
+
+            /* Solution Section */
+            .solution-section {
+                padding: 50px 15px;
+            }
+
+            .solution-text h2 {
+                font-size: 28px;
+                font-weight: 800;
+            }
+
+            .solution-text p {
+                font-size: 15px;
+            }
+
+            /* Features Section */
+            .features-section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 26px !important;
+                font-weight: 800 !important;
+            }
+
+            .feature-item {
+                padding: 20px 15px;
+            }
+
+            .feature-item .icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .feature-item h3 {
+                font-size: 20px;
+            }
+
+            /* Reviews Section */
+            .reviews-section-new {
+                padding: 50px 15px;
+            }
+
+            .reviews-section-new h2 {
+                font-size: 28px;
+                font-weight: 800;
+                margin-bottom: 30px;
+            }
+
+            .review-card-new {
+                padding: 20px;
+            }
+
+            .reviewer-avatar-placeholder {
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+
+            .reviewer-details h4 {
+                font-size: 14px;
+            }
+
+            .review-title {
+                font-size: 16px;
+            }
+
+            .review-text {
+                font-size: 14px;
+            }
+
+            .review-date {
+                display: none;
+            }
+
+            /* FAQ Section */
+            .faq-section {
+                padding: 50px 15px;
+            }
+
+            .faq-header h2 {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+            }
+
+            .faq-answer p {
+                font-size: 14px;
+            }
+
+            /* Guarantee Section */
+            .guarantee-section {
+                padding: 40px 15px;
+            }
+
+            .guarantee-badge {
+                width: 80px;
+                height: 80px;
+            }
+
+            .guarantee-badge svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .guarantee-section h2 {
+                font-size: 22px;
+            }
+
+            .guarantee-section p {
+                font-size: 14px;
+            }
+
+            /* Final CTA */
+            .final-cta {
+                padding: 50px 15px;
+            }
+
+            .final-cta h2 {
+                font-size: 26px;
+            }
+
+            .final-cta p {
+                font-size: 15px;
+            }
+
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 16px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 15px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .urgency-banner .promo-main {
+                font-size: 11px;
+            }
+
+            .countdown-unit .number {
+                font-size: 16px;
+            }
+
+            .hero-title {
+                font-size: 20px;
+            }
+
+            .save-main {
+                font-size: 20px;
+            }
+
+            .gallery-badges {
+                display: none;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <div class="promo-text">
+            <span class="promo-main">SAVE UP TO 40% TODAY</span>
+            <span class="promo-sub">Limited Time Only + Free Shipping</span>
+        </div>
+        <div class="countdown-box">
+            <div class="countdown-unit">
+                <span class="number" id="hours">12</span>
+                <span class="label">HRS</span>
+            </div>
+            <span class="countdown-separator">:</span>
+            <div class="countdown-unit">
+                <span class="number" id="minutes">57</span>
+                <span class="label">MIN</span>
+            </div>
+            <span class="countdown-separator">:</span>
+            <div class="countdown-unit">
+                <span class="number" id="seconds">05</span>
+                <span class="label">SEC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section - Product Page Layout -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Left Column - Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <button class="gallery-nav prev" onclick="changeImage(-1)">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <img id="mainImage" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="16 Inch Villain Wrist Wraps - Blackout" onclick="openImageLightbox()" style="cursor: zoom-in;" />
+                    <button class="gallery-nav next" onclick="changeImage(1)">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="gallery-badges">
+                        <span class="gallery-badge">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            USPA & IPL Approved
+                        </span>
+                        <span class="gallery-badge">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Free Shipping
+                        </span>
+                    </div>
+                </div>
+                <div class="thumbnail-strip">
+                    <div class="thumbnail active" onclick="selectThumbnail(0)">
+                        <img src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="Thumbnail 1" />
+                    </div>
+                    <div class="thumbnail" onclick="selectThumbnail(1)">
+                        <img src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089636.png?v=1743072103" alt="Thumbnail 2" />
+                    </div>
+                    <div class="thumbnail" onclick="selectThumbnail(2)">
+                        <img src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089635.png?v=1743071432" alt="Thumbnail 3" />
+                    </div>
+                    <div class="thumbnail" onclick="selectThumbnail(3)">
+                        <img src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1145647092.png?v=1744114402" alt="Thumbnail 4" />
+                    </div>
+                    <div class="thumbnail" onclick="selectThumbnail(4)">
+                        <img src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-black-green-tuffwraps-1138585173.png?v=1759242331" alt="Thumbnail 5" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Purchase Options -->
+            <div class="purchase-options">
+                <div class="rating-line">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-text">"Incredible!" | Used by 1000s of serious lifters daily</span>
+                </div>
+
+                <div class="save-headline">
+                    <span class="save-main">Save up to 40% Today</span>
+                    <span class="save-sub">(Limited Time Only)</span>
+                </div>
+
+                <h1 class="hero-title">Ditch Thumb Loops Forever.<br><em>The Belt Loop Tightening System</em></h1>
+
+                <div class="urgency-box">
+                    <span class="icon"><svg width="22" height="22" fill="none" stroke="#dc2626" stroke-width="2" viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+                    <p>Order by <strong>Jan. 28th</strong> to claim discount</p>
+                </div>
+
+                <!-- Quantity Options -->
+                <div class="quantity-options">
+                    <div class="quantity-option" data-qty="1" data-price="30.00" onclick="selectQuantity(this)">
+                        <img class="product-img" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="1 Pair" />
+                        <div class="option-title">1 Pair</div>
+                        <div class="option-price">$30.00/pair</div>
+                    </div>
+                    <div class="quantity-option selected" data-qty="2" data-price="50.00" onclick="selectQuantity(this)">
+                        <span class="save-badge">SAVE 17%</span>
+                        <img class="product-img" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="2 Pairs" />
+                        <div class="option-title">2 Pairs</div>
+                        <div class="option-price">$25.00/pair</div>
+                    </div>
+                    <div class="quantity-option" data-qty="3" data-price="60.00" onclick="selectQuantity(this)">
+                        <span class="save-badge">SAVE 33%</span>
+                        <img class="product-img" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="3 Pairs" />
+                        <div class="option-title">3 Pairs</div>
+                        <div class="option-price">$20.00/pair</div>
+                    </div>
+                </div>
+
+                <!-- Color Selection Section -->
+                <div class="color-selection-section" id="colorSection">
+                    <div class="color-section-header">
+                        <span class="color-section-title">Choose Your Colors</span>
+                        <span class="color-section-subtitle" id="colorSubtitle">Select a color for each pair</span>
+                    </div>
+                    <div class="color-selectors" id="colorSelectors">
+                        <!-- Dynamically populated based on quantity -->
+                    </div>
+                </div>
+
+                <p class="subscribe-line">Bundle & save - <strong id="savingsText">you're saving 17%</strong></p>
+
+                <!-- Size Guide Link -->
+                <div class="size-guide-link" onclick="openSizeGuide()">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    <span>Need help choosing? Watch our size guide</span>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="add-to-cart-btn" onclick="addToCart()">
+                    <span>Add To Cart</span>
+                    <span class="cart-price">$50.00</span>
+                    <span class="arrow">&#8594;</span>
+                </button>
+
+                <!-- Benefits -->
+                <p class="benefits-title">Bundle Benefits:</p>
+                <ul class="benefits-list">
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mix & match any colors you want
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Free U.S. shipping (save $6.95 instantly)
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        100% satisfaction guarantee
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop-section">
+        <div class="container">
+            <div class="value-prop-grid">
+                <div class="value-prop-problem">
+                    <span class="vp-label">THE PROBLEM</span>
+                    <h2>Thumb Loops Are Useless</h2>
+                    <p>Traditional wrist wraps have thumb loops that do absolutely nothing during your lift. They're annoying, they slip off, you're constantly adjusting them between sets. And the worst part? You never get the same tightness twice.</p>
+                </div>
+                <div class="value-prop-solution">
+                    <span class="vp-label">OUR SOLUTION</span>
+                    <h2>Belt Loop Tightening System</h2>
+                    <p>Thread it like a belt, pull to your perfect tightness, lock it down. Get consistent, adjustable support exactly when you need it. No fumbling, no guessing - just instant support that stays put.</p>
+                </div>
+            </div>
+            <div class="value-prop-benefits">
+                <div class="vp-benefit">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Adjustable tension control</span>
+                </div>
+                <div class="vp-benefit">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Same tightness every time</span>
+                </div>
+                <div class="vp-benefit">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>No thumb loop hassle</span>
+                </div>
+                <div class="vp-benefit">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>USPA & IPL approved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section - 3 Videos Inline -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Everything You Need to Know About Wrist Wraps</h2>
+            <div class="video-grid" id="videoGrid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="Our Belt Loop Explained (1).mp4" type="video/mp4">
+                    </video>
+                    <p class="video-title">How The Belt Loop Works</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="Why Use Wrist Wraps_.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-title">Why Use Wrist Wraps?</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="Wrist Wrap Size Guide.mp4" type="video/mp4">
+                    </video>
+                    <p class="video-title">Wrist Wrap Size Guide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How The Belt Loop System Works</h2>
+            <p class="subtitle">Three simple steps to perfect wrist support - every single time.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <img class="step-image" src="DSC07553.jpg" alt="Thread It" />
+                    <div class="step-number">1</div>
+                    <h3>Thread It</h3>
+                    <p>Wrap around your wrist and thread the end through the reinforced belt loop - just like threading a belt through a buckle.</p>
+                </div>
+                <div class="step-card">
+                    <img class="step-image" src="DSC07554.jpg" alt="Pull Tight" />
+                    <div class="step-number">2</div>
+                    <h3>Pull Tight</h3>
+                    <p>Pull to your desired tightness. The loop creates leverage so you get maximum tension with minimal effort.</p>
+                </div>
+                <div class="step-card">
+                    <img class="step-image" src="DSC07558.jpg" alt="Lock & Lift" />
+                    <div class="step-number">3</div>
+                    <h3>Lock & Lift</h3>
+                    <p>Secure with the industrial-strength velcro. You're locked in and ready to lift. No fumbling, no adjusting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-image">
+                    <img src="30-villain-wrist-wraps-merica-tuffwraps (5).png" alt="Belt Loop Tightening System" />
+                </div>
+                <div class="solution-text">
+                    <p class="section-label">The Solution</p>
+                    <h2>Introducing The <span>Belt Loop Tightening System</span></h2>
+                    <p>We completely re-engineered wrist wraps from the ground up. Our patented belt loop system works just like cinching a lifting belt - giving you instant, maximum support with zero thumb loop hassle.</p>
+
+                    <ul class="solution-benefits">
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span><strong>Instant Lock-In:</strong> Thread, pull, done. Get perfect tension in seconds.</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span><strong>Consistent Support:</strong> Same tightness every single rep, every single set.</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span><strong>No More Fumbling:</strong> Nothing dangling, nothing to adjust, nothing in your way.</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span><strong>Competition Approved:</strong> USPA and IPL certified for all sanctioned events.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <p class="section-label" style="color: #dc2626;">Built Different</p>
+            <h2 class="section-title" style="color: white;">Premium Materials. Superior Construction.</h2>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">
+                        <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Cotton/Poly Elastic Blend</h3>
+                    <p>Moisture-wicking fabric keeps you dry and comfortable through your toughest sessions.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon">
+                        <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3>Reinforced Stitching</h3>
+                    <p>Heavy-duty construction that handles thousands of pounds without fraying or tearing.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon">
+                        <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                    </div>
+                    <h3>Perfect 16" Length</h3>
+                    <p>20" total (16" fabric + 4" velcro) - ideal for Olympic lifts and CrossFit movements.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section-new">
+        <div class="container">
+            <h2>Rave Reviews from Villain Wrist Wrap Users</h2>
+
+            <div class="reviews-list">
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">MR</div>
+                            <div class="reviewer-details">
+                                <h4>Mike R.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">1 week ago</span>
+                    </div>
+                    <h3 class="review-title">This actually feels different!</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">I've tried so many wraps - SBD, Inzer, generic Amazon ones - but this is the first time I actually felt a difference in my wrist support. The belt loop system is genius. I'm not constantly readjusting between sets anymore.</p>
+                </div>
+
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">SK</div>
+                            <div class="reviewer-details">
+                                <h4>Sarah K.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">2 weeks ago</span>
+                    </div>
+                    <h3 class="review-title">The thumb loop struggle is OVER</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">Seriously. Over. I used to dread putting on my wraps because I'd always be messing with that stupid thumb loop. Now I just thread and pull - done. Same tight support every single time. That's a first for me.</p>
+                </div>
+
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">JT</div>
+                            <div class="reviewer-details">
+                                <h4>James T.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">3 weeks ago</span>
+                    </div>
+                    <h3 class="review-title">Competition approved and actually comfortable</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">Used these at my last USPA meet - 500lb bench with zero wrist issues. Most competition wraps feel like medieval torture devices, but these actually feel good while giving maximum support. 10/10.</p>
+                </div>
+
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">DM</div>
+                            <div class="reviewer-details">
+                                <h4>Derek M.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">3 weeks ago</span>
+                    </div>
+                    <h3 class="review-title">Finally wraps that don't loosen mid-set</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">My old wraps would always loosen up by rep 3 or 4. These stay locked the entire set. The belt loop design actually makes sense - wish I'd found these years ago. Ordered a second pair in a different color.</p>
+                </div>
+
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">AL</div>
+                            <div class="reviewer-details">
+                                <h4>Amanda L.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">1 month ago</span>
+                    </div>
+                    <h3 class="review-title">Perfect for CrossFit - love the 16" length</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">I do a lot of Olympic lifts and needed wraps that give support but don't restrict movement. The 16" are perfect - enough support for heavy cleans but I still have full wrist mobility for snatches. The belt loop makes getting them tight SO much easier.</p>
+                </div>
+
+                <div class="review-card-new">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar-placeholder">RJ</div>
+                            <div class="reviewer-details">
+                                <h4>Ryan J.</h4>
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Customer
+                                </span>
+                            </div>
+                        </div>
+                        <span class="review-date">1 month ago</span>
+                    </div>
+                    <h3 class="review-title">Bought 3 pairs - one for home, gym, and travel</h3>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">Once I tried the first pair I immediately ordered two more. Quality is solid, the velcro is industrial strength, and they look clean. The bundle deal made it a no-brainer. These are now the only wraps I use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - Two Column Layout -->
+    <section class="faq-section">
+        <div class="faq-layout">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>You've got questions? We've got answers.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the Belt Loop System work?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply thread the wrap through the loop (just like a belt), pull to your desired tightness, and secure with velcro. It takes seconds and gives you the same tight support every time - no more fumbling with thumb loops.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are these approved for competition?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our 16" Villain Wrist Wraps are approved by both USPA and IPL for all sanctioned competitions. You can train and compete with the same gear.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between 16", 24", and 30" wraps?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>16" wraps are perfect for Olympic lifts, CrossFit, and movements requiring more wrist mobility. 24" and 30" provide maximum support for heavy powerlifting movements like bench press. Choose based on your primary training style.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why no thumb loop?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Thumb loops serve only one purpose - helping you put wraps on. During your actual lift, they do nothing for support. Our belt loop system eliminates this useless feature and gives you a better way to secure your wraps with consistent tension every time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What material are they made from?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our wraps use a premium cotton/poly elastic blend that wicks moisture and maintains its elasticity over time. The stitching is reinforced to handle thousands of pounds without fraying.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I care for my wraps?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hand wash with warm water and light detergent, then air dry. Avoid machine washing, tumble drying, and ironing to maintain elasticity and extend the life of your wraps.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if they don't work for me?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 100% satisfaction guarantee. If you're not completely happy with your Villain Wrist Wraps, contact us and we'll make it right. No hassle, no questions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I mix and match colors?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! When you order multiple pairs, you can choose any combination of colors. Want Blackout for the gym and Merica for competition day? Go for it.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does shipping take?</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We ship from our USA warehouse. Most orders arrive within 3-5 business days with our free standard shipping. Expedited options are available at checkout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-badge">
+                <svg width="50" height="50" fill="white" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h2>100% Satisfaction Guarantee</h2>
+            <p>Try your Villain Wrist Wraps risk-free. If you're not completely satisfied with the quality and performance, we'll make it right. That's our promise to you.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Upgrade Your Lifts?</h2>
+            <p>Join thousands of athletes who've ditched thumb loops for good. Get the support you deserve with our Belt Loop Tightening System.</p>
+            <a href="#" class="cta-button" onclick="document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' }); return false;">GET YOUR VILLAIN WRAPS NOW</a>
+        </div>
+    </section>
+
+    <!-- Size Guide Video Modal -->
+    <div class="video-modal" id="sizeGuideModal" onclick="closeSizeGuide(event)">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeSizeGuide(event)">&times;</button>
+            <video id="sizeGuideVideo" controls>
+                <source src="Wrist Wrap Size Guide.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TuffWraps. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        // Product Images Array
+        const productImages = [
+            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041',
+            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089636.png?v=1743072103',
+            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089635.png?v=1743071432',
+            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1145647092.png?v=1744114402',
+            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-black-green-tuffwraps-1138585173.png?v=1759242331'
+        ];
+        let currentImageIndex = 0;
+
+        // Change main image
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = productImages.length - 1;
+            if (currentImageIndex >= productImages.length) currentImageIndex = 0;
+            updateMainImage();
+        }
+
+        function selectThumbnail(index) {
+            currentImageIndex = index;
+            updateMainImage();
+        }
+
+        function updateMainImage() {
+            document.getElementById('mainImage').src = productImages[currentImageIndex];
+            document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === currentImageIndex);
+            });
+        }
+
+        // Color options available
+        const colorOptions = [
+            { value: 'blackout', label: 'Blackout' },
+            { value: 'black-green', label: 'Black/Green' },
+            { value: 'merica', label: 'Merica' },
+            { value: 'pink', label: 'Pink' },
+            { value: 'purple', label: 'Purple' },
+            { value: 'red', label: 'Red' }
+        ];
+
+        // Generate color selectors based on quantity
+        function updateColorSelectors(qty) {
+            const container = document.getElementById('colorSelectors');
+            const subtitle = document.getElementById('colorSubtitle');
+            const savingsText = document.getElementById('savingsText');
+
+            container.innerHTML = '';
+
+            if (qty === 1) {
+                subtitle.textContent = 'Select your color';
+                savingsText.innerHTML = 'Free shipping included';
+            } else if (qty === 2) {
+                subtitle.textContent = 'Select a color for each pair';
+                savingsText.innerHTML = "you're saving 17%";
+            } else {
+                subtitle.textContent = 'Select a color for each pair';
+                savingsText.innerHTML = "you're saving 33%";
+            }
+
+            for (let i = 1; i <= qty; i++) {
+                const row = document.createElement('div');
+                row.className = 'color-selector-row';
+
+                const label = document.createElement('span');
+                label.className = 'color-selector-label';
+                label.textContent = qty === 1 ? 'Color:' : `Pair ${i}:`;
+
+                const select = document.createElement('select');
+                select.id = `color-pair-${i}`;
+                select.name = `color-pair-${i}`;
+
+                colorOptions.forEach(opt => {
+                    const option = document.createElement('option');
+                    option.value = opt.value;
+                    option.textContent = opt.label;
+                    select.appendChild(option);
+                });
+
+                row.appendChild(label);
+                row.appendChild(select);
+                container.appendChild(row);
+            }
+        }
+
+        // Quantity Selection
+        function selectQuantity(element) {
+            document.querySelectorAll('.quantity-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            const price = element.dataset.price;
+            const qty = parseInt(element.dataset.qty);
+            document.querySelector('.cart-price').textContent = '$' + price;
+            updateColorSelectors(qty);
+        }
+
+        // Initialize color selectors on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const selected = document.querySelector('.quantity-option.selected');
+            if (selected) {
+                updateColorSelectors(parseInt(selected.dataset.qty));
+            }
+        });
+
+        // Add to Cart
+        function addToCart() {
+            const selected = document.querySelector('.quantity-option.selected');
+            const qty = parseInt(selected.dataset.qty);
+            const price = selected.dataset.price;
+
+            // Get selected colors from the color section
+            let colors = [];
+            for (let i = 1; i <= qty; i++) {
+                const select = document.getElementById(`color-pair-${i}`);
+                if (select) {
+                    colors.push(select.options[select.selectedIndex].text);
+                }
+            }
+
+            // Show confirmation (in real implementation, this would add to Shopify cart)
+            alert(`Added ${qty} pair(s) of Villain Wrist Wraps to cart!\n\nColors: ${colors.join(', ')}\nTotal: $${price}\n\nRedirecting to checkout...`);
+
+            // In production, redirect to Shopify checkout:
+            // window.location.href = 'https://www.tuffwraps.com/cart/add?id=VARIANT_ID&quantity=' + qty;
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+
+            const diff = endOfDay - now;
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Color Selector
+        document.querySelectorAll('.color-option').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Video Play Function
+        function playVideo(videoId, overlay) {
+            const video = document.getElementById(videoId);
+            overlay.classList.add('hidden');
+            video.controls = true;
+            video.play();
+        }
+
+        // Mobile Video Slider Dots
+        const videoGrid = document.getElementById('videoGrid');
+        const dots = document.querySelectorAll('.video-slider-dots .dot');
+
+        if (videoGrid && dots.length) {
+            videoGrid.addEventListener('scroll', function() {
+                const scrollLeft = videoGrid.scrollLeft;
+                const cardWidth = videoGrid.querySelector('.video-card').offsetWidth + 15;
+                const activeIndex = Math.round(scrollLeft / cardWidth);
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === activeIndex);
+                });
+            });
+        }
+
+        // Size Guide Modal
+        function openSizeGuide() {
+            document.getElementById('sizeGuideModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSizeGuide(event) {
+            document.getElementById('sizeGuideModal').classList.remove('active');
+            document.getElementById('sizeGuideVideo').pause();
+            document.body.style.overflow = '';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSizeGuide();
+            }
+        });
+    </script>
+
+</body>
+</html>
