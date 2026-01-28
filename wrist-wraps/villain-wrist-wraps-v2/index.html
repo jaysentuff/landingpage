@@ -2604,31 +2604,29 @@
     </footer>
 
     <script>
-        // Product Images Array
-        const productImages = [
-            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041',
-            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089636.png?v=1743072103',
-            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1144089635.png?v=1743071432',
-            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-tuffwraps-1145647092.png?v=1744114402',
-            'https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-black-green-tuffwraps-1138585173.png?v=1759242331'
-        ];
+        // Gallery state - managed by color selection
         let currentImageIndex = 0;
+        let currentGalleryImages = [];
 
-        // Change main image
+        // Change main image (arrows)
         function changeImage(direction) {
+            if (currentGalleryImages.length === 0) return;
             currentImageIndex += direction;
-            if (currentImageIndex < 0) currentImageIndex = productImages.length - 1;
-            if (currentImageIndex >= productImages.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = currentGalleryImages.length - 1;
+            if (currentImageIndex >= currentGalleryImages.length) currentImageIndex = 0;
             updateMainImage();
         }
 
+        // Select thumbnail
         function selectThumbnail(index) {
             currentImageIndex = index;
             updateMainImage();
         }
 
+        // Update main image display
         function updateMainImage() {
-            document.getElementById('mainImage').src = productImages[currentImageIndex];
+            if (currentGalleryImages.length === 0) return;
+            document.getElementById('mainImage').src = currentGalleryImages[currentImageIndex];
             document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
                 thumb.classList.toggle('active', i === currentImageIndex);
             });
@@ -2721,11 +2719,9 @@
             ]
         };
 
-        // Track selected preset and current gallery images
+        // Track selected preset
         let selectedPreset = 0;
         let selectedColors = ['blackout'];
-        let currentGalleryImages = [];
-        let currentImageIndex = 0;
 
         // Update the gallery with images from selected colors (1 per color)
         function updateGallery() {
