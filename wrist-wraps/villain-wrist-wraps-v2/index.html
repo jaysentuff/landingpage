@@ -2725,25 +2725,16 @@
 
         // Update the gallery with images from selected colors
         function updateGallery() {
-            // Get unique colors from selection
+            // Get unique colors from selection (preserves order)
             const uniqueColors = [...new Set(selectedColors)];
 
-            // Build gallery images
+            // Show ALL images from ALL colors in order
             currentGalleryImages = [];
-            if (uniqueColors.length === 1) {
-                // Single color: show all images from that color
-                const colorKey = uniqueColors[0];
+            uniqueColors.forEach(colorKey => {
                 if (colors[colorKey] && colors[colorKey].images) {
-                    currentGalleryImages = [...colors[colorKey].images];
+                    currentGalleryImages.push(...colors[colorKey].images);
                 }
-            } else {
-                // Multiple colors: show first 2 images from each color
-                uniqueColors.forEach(colorKey => {
-                    if (colors[colorKey] && colors[colorKey].images) {
-                        currentGalleryImages.push(...colors[colorKey].images.slice(0, 2));
-                    }
-                });
-            }
+            });
 
             // Update main image
             currentImageIndex = 0;
@@ -2752,11 +2743,11 @@
                 mainImage.src = currentGalleryImages[0];
             }
 
-            // Update thumbnails (max 6)
+            // Update thumbnails (scrollable - no limit)
             const thumbnailStrip = document.querySelector('.thumbnail-strip');
             if (thumbnailStrip) {
                 thumbnailStrip.innerHTML = '';
-                currentGalleryImages.slice(0, 6).forEach((img, index) => {
+                currentGalleryImages.forEach((img, index) => {
                     const thumb = document.createElement('div');
                     thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
                     thumb.onclick = () => selectThumbnail(index);
