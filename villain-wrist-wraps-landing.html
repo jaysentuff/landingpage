@@ -14,6 +14,11 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             color: #1a1a1a;
@@ -1499,6 +1504,371 @@
 
         footer a:hover {
             color: white;
+        }
+
+        /* ========== MOBILE RESPONSIVE STYLES ========== */
+        @media (max-width: 768px) {
+            /* Urgency Banner - Full Width */
+            .urgency-banner {
+                padding: 10px 15px;
+                gap: 10px;
+                width: 100%;
+                margin: 0;
+            }
+
+            .urgency-banner .promo-main {
+                font-size: 13px;
+            }
+
+            .urgency-banner .promo-sub {
+                font-size: 11px;
+            }
+
+            .countdown-unit .number {
+                font-size: 18px;
+            }
+
+            .countdown-separator {
+                font-size: 18px;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 15px 15px 40px;
+            }
+
+            .hero-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .product-gallery {
+                position: static !important;
+                order: 1;
+            }
+
+            .purchase-options {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Reorder purchase options elements on mobile */
+            .purchase-options .rating-line { order: 1; }
+            .purchase-options .save-headline { order: 2; }
+            .purchase-options .hero-title { order: 3; }
+            .purchase-options .urgency-box { order: 4; }
+            .purchase-options .add-to-cart-btn { order: 5; margin-bottom: 15px; }
+            .purchase-options .quantity-options { order: 6; }
+            .purchase-options .color-selection-section { order: 7; }
+            .purchase-options .subscribe-line { order: 8; }
+            .purchase-options .size-guide-link { order: 9; }
+            .purchase-options .benefits-title { order: 10; }
+            .purchase-options .benefits-list { order: 11; }
+
+            .main-image-container {
+                padding: 15px;
+                border-radius: 12px;
+            }
+
+            .gallery-badges {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .gallery-badge {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+
+            .gallery-nav {
+                width: 35px;
+                height: 35px;
+            }
+
+            .gallery-nav.prev { left: 10px; }
+            .gallery-nav.next { right: 10px; }
+
+            .thumbnail {
+                width: 55px;
+                height: 55px;
+            }
+
+            /* Purchase Options */
+            .save-main {
+                font-size: 22px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            /* Keep quantity options in 3 columns like reference */
+            .quantity-options {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .quantity-option {
+                display: block;
+                text-align: center;
+                padding: 12px 8px;
+            }
+
+            .quantity-option .product-img {
+                width: 40px;
+                height: 40px;
+                margin: 0 auto 8px;
+            }
+
+            .quantity-option .option-title {
+                font-size: 12px;
+                margin-bottom: 2px;
+            }
+
+            .quantity-option .option-price {
+                font-size: 11px;
+            }
+
+            .quantity-option .save-badge {
+                top: -8px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                font-size: 8px;
+                padding: 3px 6px;
+            }
+
+            .add-to-cart-btn {
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+
+            /* Value Prop Section */
+            .value-prop-section {
+                padding: 40px 15px;
+            }
+
+            .value-prop-problem,
+            .value-prop-solution {
+                padding: 20px;
+            }
+
+            .value-prop-problem h2,
+            .value-prop-solution h2 {
+                font-size: 20px;
+            }
+
+            .value-prop-benefits {
+                gap: 15px;
+            }
+
+            .vp-benefit {
+                font-size: 13px;
+            }
+
+            /* Video Section */
+            .video-section {
+                padding: 15px 15px 40px;
+            }
+
+            .video-section h2 {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            /* How It Works */
+            .how-it-works {
+                padding: 50px 15px;
+            }
+
+            .how-it-works h2 {
+                font-size: 26px;
+            }
+
+            .how-it-works .subtitle {
+                font-size: 15px;
+            }
+
+            .step-image {
+                height: 200px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .step-card h3 {
+                font-size: 18px;
+            }
+
+            .step-card p {
+                font-size: 14px;
+            }
+
+            /* Solution Section */
+            .solution-section {
+                padding: 50px 15px;
+            }
+
+            .solution-text h2 {
+                font-size: 24px;
+            }
+
+            .solution-text p {
+                font-size: 15px;
+            }
+
+            /* Features Section */
+            .features-section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 24px !important;
+            }
+
+            .feature-item {
+                padding: 20px 15px;
+            }
+
+            .feature-item .icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .feature-item h3 {
+                font-size: 18px;
+            }
+
+            /* Reviews Section */
+            .reviews-section-new {
+                padding: 50px 15px;
+            }
+
+            .reviews-section-new h2 {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .review-card-new {
+                padding: 20px;
+            }
+
+            .reviewer-avatar-placeholder {
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+
+            .reviewer-details h4 {
+                font-size: 14px;
+            }
+
+            .review-title {
+                font-size: 16px;
+            }
+
+            .review-text {
+                font-size: 14px;
+            }
+
+            .review-date {
+                display: none;
+            }
+
+            /* FAQ Section */
+            .faq-section {
+                padding: 50px 15px;
+            }
+
+            .faq-header h2 {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+            }
+
+            .faq-answer p {
+                font-size: 14px;
+            }
+
+            /* Guarantee Section */
+            .guarantee-section {
+                padding: 40px 15px;
+            }
+
+            .guarantee-badge {
+                width: 80px;
+                height: 80px;
+            }
+
+            .guarantee-badge svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .guarantee-section h2 {
+                font-size: 22px;
+            }
+
+            .guarantee-section p {
+                font-size: 14px;
+            }
+
+            /* Final CTA */
+            .final-cta {
+                padding: 50px 15px;
+            }
+
+            .final-cta h2 {
+                font-size: 26px;
+            }
+
+            .final-cta p {
+                font-size: 15px;
+            }
+
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 16px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 15px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .urgency-banner .promo-main {
+                font-size: 11px;
+            }
+
+            .countdown-unit .number {
+                font-size: 16px;
+            }
+
+            .hero-title {
+                font-size: 20px;
+            }
+
+            .save-main {
+                font-size: 20px;
+            }
+
+            .gallery-badges {
+                display: none;
+            }
         }
 
         /* Utility Classes */
