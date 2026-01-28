@@ -201,28 +201,26 @@
 
         .thumbnail-strip {
             display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 5px;
-            height: 80px;
-            min-height: 80px;
-            max-width: 100%;
-            scroll-snap-type: x mandatory;
+            gap: 8px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding: 5px 0;
+            height: 84px;
+            width: 100%;
+            max-width: 500px;
             -webkit-overflow-scrolling: touch;
+            touch-action: pan-x;
+            cursor: grab;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .thumbnail-strip::-webkit-scrollbar {
-            height: 6px;
+            display: none;
         }
 
-        .thumbnail-strip::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 3px;
-        }
-
-        .thumbnail-strip::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 3px;
+        .thumbnail-strip:active {
+            cursor: grabbing;
         }
 
         .thumbnail {
@@ -1716,9 +1714,12 @@
                 border-radius: 12px;
                 background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
                 position: relative;
-                max-width: 320px;
+                width: 100%;
+                max-width: 100%;
                 margin: 0 auto;
                 aspect-ratio: 1 / 1;
+                min-height: auto;
+                max-height: none;
             }
 
             .main-image-container img {
@@ -2150,10 +2151,10 @@
 
                 <!-- Quantity Options -->
                 <div class="quantity-options">
-                    <div class="quantity-option" data-qty="1" data-price="30.00" onclick="selectQuantity(this)">
+                    <div class="quantity-option" data-qty="1" data-price="33.00" onclick="selectQuantity(this)">
                         <img class="product-img" src="https://www.tuffwraps.com/cdn/shop/files/16-villain-wrist-wraps-blackout-16-inch-tuffwraps-1152118750.png?v=1743075041" alt="1 Pair" />
                         <div class="option-title">1 Pair</div>
-                        <div class="option-price">$30.00/pair</div>
+                        <div class="option-price">$33.00/pair</div>
                     </div>
                     <div class="quantity-option selected" data-qty="2" data-price="50.00" onclick="selectQuantity(this)">
                         <span class="save-badge">SAVE 17%</span>
@@ -2650,10 +2651,66 @@
             updateMainImage();
         }
 
-        // Select thumbnail
+        // Drag to scroll for thumbnail strip
+        let isDragging = false;
+
+        // Select thumbnail (only if not dragging)
         function selectThumbnail(index) {
+            if (isDragging) {
+                isDragging = false;
+                return;
+            }
             currentImageIndex = index;
             updateMainImage();
+        }
+        function initDragScroll() {
+            const strip = document.querySelector('.thumbnail-strip');
+            if (!strip) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            strip.addEventListener('mousedown', (e) => {
+                isDown = true;
+                isDragging = false;
+                strip.style.cursor = 'grabbing';
+                startX = e.pageX - strip.offsetLeft;
+                scrollLeft = strip.scrollLeft;
+            });
+
+            strip.addEventListener('mouseleave', () => {
+                isDown = false;
+                strip.style.cursor = 'grab';
+            });
+
+            strip.addEventListener('mouseup', () => {
+                isDown = false;
+                strip.style.cursor = 'grab';
+            });
+
+            strip.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - strip.offsetLeft;
+                const walk = (x - startX) * 2;
+                if (Math.abs(walk) > 5) isDragging = true;
+                strip.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch support
+            strip.addEventListener('touchstart', (e) => {
+                isDragging = false;
+                startX = e.touches[0].pageX - strip.offsetLeft;
+                scrollLeft = strip.scrollLeft;
+            }, { passive: true });
+
+            strip.addEventListener('touchmove', (e) => {
+                const x = e.touches[0].pageX - strip.offsetLeft;
+                const walk = (x - startX) * 2;
+                if (Math.abs(walk) > 5) isDragging = true;
+                strip.scrollLeft = scrollLeft - walk;
+            }, { passive: true });
         }
 
         // Update main image display
@@ -2665,7 +2722,7 @@
             });
         }
 
-        // Color data with hex values and images
+        // Color data with hex values and images (main product shot first, then others)
         const colors = {
             blackout: {
                 label: 'Blackout',
@@ -2681,10 +2738,10 @@
                 label: 'Merica',
                 hex: 'linear-gradient(135deg, #dc2626 33%, #fff 33%, #fff 66%, #1e40af 66%)',
                 images: [
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546329.webp',
                     'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546326.webp',
                     'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546327.webp',
-                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546328.webp',
-                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546329.webp'
+                    'assets/images/merica/16-villain-wrist-wraps-merica-16-inch-tuffwraps-1195546328.webp'
                 ]
             },
             'pink-teal': {
@@ -2878,6 +2935,7 @@
             if (selected) {
                 updateColorSelectors(parseInt(selected.dataset.qty));
             }
+            initDragScroll();
         });
 
         // Add to Cart
