@@ -17,7 +17,9 @@
       "Bash(npm install:*)",
       "Bash(node -e:*)",
       "Bash(git reset:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)"
     ]
   }
 }

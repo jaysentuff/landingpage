@@ -1,23 +1,10 @@
 {
   "name": "landing-page",
   "version": "1.0.0",
-  "main": "test-mobile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "serve -s . -l $PORT"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaysentuff/landingpage.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaysentuff/landingpage/issues"
-  },
-  "homepage": "https://github.com/jaysentuff/landingpage#readme",
-  "description": "",
   "dependencies": {
-    "playwright": "^1.58.0"
+    "serve": "^14.2.0"
   }
 }
