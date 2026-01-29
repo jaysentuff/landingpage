@@ -2280,7 +2280,7 @@
 
                 <div class="urgency-box">
                     <span class="icon"><svg width="22" height="22" fill="none" stroke="#dc2626" stroke-width="2" viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
-                    <p>Order by <strong>Jan. 28th</strong> to claim discount</p>
+                    <p>Order by <strong id="orderByDate">today</strong> to claim discount</p>
                 </div>
 
                 <!-- Quantity Options -->
@@ -3122,6 +3122,17 @@
             updateColorSelectors(qty);
         }
 
+        // Format today's date for urgency box
+        function setTodayDate() {
+            const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+            const today = new Date();
+            const day = today.getDate();
+            const suffix = (day === 1 || day === 21 || day === 31) ? 'st' : (day === 2 || day === 22) ? 'nd' : (day === 3 || day === 23) ? 'rd' : 'th';
+            const dateStr = months[today.getMonth()] + ' ' + day + suffix;
+            const el = document.getElementById('orderByDate');
+            if (el) el.textContent = dateStr;
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             const selected = document.querySelector('.quantity-option.selected');
@@ -3129,6 +3140,7 @@
                 updateColorSelectors(parseInt(selected.dataset.qty));
             }
             initDragScroll();
+            setTodayDate();
         });
 
         // Social video play/pause
